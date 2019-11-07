@@ -1,0 +1,20 @@
+package proto;
+
+import "google/protobuf/descriptor.proto";
+
+/*
+
+Why we don't implement in this way:
+
+"50000-99999... [field] range is reserved for internal use within individual organizations, 
+so you can use numbers in this range freely for in-house applications. If you intend to use 
+custom options in public applications, however, then it is important that you make sure that 
+your field numbers are globally unique. To obtain globally unique field numbers, please send 
+a request to add an entry to protobuf global extension registry"
+
+REF: https://developers.google.com/protocol-buffers/docs/proto#options
+
+*/
+extend google.protobuf.MessageOptions {
+    optional string group = 50000;
+  }
